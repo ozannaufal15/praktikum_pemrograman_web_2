@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <head>
     <style>
        table, tr, td{
@@ -8,6 +8,9 @@
        } 
        #tableHead{
         background-color: red;
+       }
+       h4{
+        margin: 10 auto;
        }
     </style>
 </head>
