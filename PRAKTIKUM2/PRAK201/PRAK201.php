@@ -21,7 +21,7 @@
             <input type="text" id="name3" name="name3">
         </div>
         <div>
-            <button type="submit" name="submit">Submit</button>
+            <button type="submit" name="submit">Urutkan</button>
         </div>
     </form>
 
@@ -43,12 +43,12 @@
                 }
                 
                 echo $arrName[$first]."<br>";
-                if(strcmp($arrName[($first-1)%3],$arrName[($first+1)%3])==-1){
-                    echo $arrName[($first-1)%3]."<br>";
+                if(strcmp($arrName[($first+1)%3],$arrName[($first+2)%3])==-1){
                     echo $arrName[($first+1)%3]."<br>";
+                    echo $arrName[($first+2)%3]."<br>";
                 }else{
+                    echo $arrName[($first+2)%3]."<br>";
                     echo $arrName[($first+1)%3]."<br>";
-                    echo $arrName[($first-1)%3]."<br>";
                 }
             }    
         }  

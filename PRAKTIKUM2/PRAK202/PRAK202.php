@@ -58,6 +58,7 @@
     <?php 
     if(isset($_GET['name']) && isset($_GET['nim']) && isset($_GET['jenisKelamin'])){
         if($_GET['name']!="" && $_GET['nim']!=""){
+            echo "<br><h4>Output:</h4><br>";
             echo "Nama: ". $_GET['name']. "<br>";
             echo "Nim: ". $_GET['nim']. "<br>";
             echo "Jenis Kelamin: ". $_GET['jenisKelamin']. "<br>";
