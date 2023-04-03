@@ -45,11 +45,10 @@
                 <input type="radio" name="convertTo" value="K">
                 <label>Kelvin</label>
             </div>
-            <button type="submit">Konversi</button>
+            <button type="submit" name="submit">Konversi</button>
         </div>
     </form>
     <?php 
-       // echo $_GET['val'];
        if(isset($_GET['val']) && isset($_GET['convertFrom']) && isset($_GET['convertTo'])){
         $val = $_GET['val'];
         $from = $_GET['convertFrom'];

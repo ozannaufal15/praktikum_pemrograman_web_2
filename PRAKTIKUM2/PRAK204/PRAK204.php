@@ -12,32 +12,31 @@
             <label for="nilai">Nilai: </label>
             <input type="number" name="val" id="nilai"><br>
         </div>
-        <button type="submit">Konversi</button>
+        <button type="submit" name="submit">Konversi</button>
     </form>
     <h4>
         <?php 
-            if(isset($_GET['val'])){
+            if(isset($_GET['val']) && $_GET['val']!=""){
                 $val = $_GET['val'];
-                echo $val;
+                echo "Hasil: ";
                 if($val>999){
                     echo "Anda Mengimput Melebihi Limit Bilangan";
                 }
-                if($val>99){
+                elseif($val>99){
                     echo "Ratusan";
                 }
-                if($val>19){
+                elseif($val>19 || $val==10){
                     echo "Puluhan";
                 }
-                if($val>9){
+                elseif($val>10){
                     echo "Belasan";
                 }
-                if($val>0){
+                elseif($val>0){
                     echo "Satuan";
                 }
-                if($val==0){
+                elseif($val==0){
                     echo "Nol";
                 }
-            
             }
         ?>
     </h4>

@@ -13,10 +13,6 @@
         .important{
             color: red;
         }
-        .invisible{
-            display: none;
-        }
-        
     </style>
 </head>
 <body>
@@ -25,7 +21,6 @@
             <label for="name">Nama: </label>
             <input type="text" id="name" name="name">
             <span class="important">* <?php 
-            //echo isset($_GET['name']);
                 if(isset($_GET['name']) && $_GET['name']==""){
                     echo "Nama tidak boleh kosong";
                 }
@@ -42,14 +37,11 @@
         </div>
         <div class="flex-column">
             <p>Jenis Kelamin: <span class="important">* <?php 
-                //if(isset($_GET['jenisKelamin']))
-                if((isset($_GET['jenisKelamin'])) && $_GET['jenisKelamin']=="0"){
+                if((isset($_GET['submit']) && !isset($_GET['jenisKelamin']))){
                     echo "Jenis Kelamin tidak boleh kosong";
                 }
-                //echo $_GET['jenisKelamin'];
             ?></span>
             </p>
-            <input type="radio" name="jenisKelamin" class="invisible" value="0" checked>
             <div>
             <input type="radio" name="jenisKelamin" id="jkl" value="Laki-Laki">
             <label for="jkl">Laki-Laki</label>
@@ -60,12 +52,12 @@
             </div>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" name="submit">Submit</button>
         </div>
     </form>
     <?php 
     if(isset($_GET['name']) && isset($_GET['nim']) && isset($_GET['jenisKelamin'])){
-        if($_GET['name']!="" && $_GET['nim']!="" && $_GET['jenisKelamin']!="0"){
+        if($_GET['name']!="" && $_GET['nim']!=""){
             echo "Nama: ". $_GET['name']. "<br>";
             echo "Nim: ". $_GET['nim']. "<br>";
             echo "Jenis Kelamin: ". $_GET['jenisKelamin']. "<br>";

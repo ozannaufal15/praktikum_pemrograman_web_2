@@ -21,36 +21,37 @@
             <input type="text" id="name3" name="name3">
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" name="submit">Submit</button>
         </div>
     </form>
 
     <?php 
-        if(isset($_GET['name1']) && isset($_GET['name2']) && isset($_GET['name3'])){
-            $arrName = [$_GET['name1'], $_GET['name2'], $_GET['name3']];
-            $first;
-            if(strcmp($arrName[0],$arrName[1])==-1){
-                $first=0;
-            }else{
-                $first=1;
-            }
-
-            if(strcmp($arrName[$first],$arrName[2])==-1){
-                //$first=$first;
-            }else{
-                $first=2;
-            }
-            
-            echo $arrName[$first]."<br>";
-            if(strcmp($arrName[($first-1)%3],$arrName[($first+1)%3])==-1){
-                echo $arrName[($first-1)%3]."<br>";
-                echo $arrName[($first+1)%3]."<br>";
-            }else{
-                echo $arrName[($first+1)%3]."<br>";
-                echo $arrName[($first-1)%3]."<br>";
-            }
-            //echo var_dump(strcmp($arrName[0],$arrName[1]));    
-        }
+        if(isset($_GET['submit'])){
+            if(isset($_GET['name1']) && isset($_GET['name2']) && isset($_GET['name3'])){
+                $arrName = [$_GET['name1'], $_GET['name2'], $_GET['name3']];
+                $first;
+                if(strcmp($arrName[0],$arrName[1])==-1){
+                    $first=0;
+                }else{
+                    $first=1;
+                }
+    
+                if(strcmp($arrName[$first],$arrName[2])==-1){
+                    //$first=$first;
+                }else{
+                    $first=2;
+                }
+                
+                echo $arrName[$first]."<br>";
+                if(strcmp($arrName[($first-1)%3],$arrName[($first+1)%3])==-1){
+                    echo $arrName[($first-1)%3]."<br>";
+                    echo $arrName[($first+1)%3]."<br>";
+                }else{
+                    echo $arrName[($first+1)%3]."<br>";
+                    echo $arrName[($first-1)%3]."<br>";
+                }
+            }    
+        }  
     ?>
 </body>
 </html>
