@@ -50,42 +50,44 @@
     </form>
     <?php 
        if(isset($_GET['val']) && isset($_GET['convertFrom']) && isset($_GET['convertTo'])){
-        $val = $_GET['val'];
-        $from = $_GET['convertFrom'];
-        $to = $_GET['convertTo'];
-        switch($from){
-            case 'C': 
-                $val/=100;
-                break;
-            case 'F':
-                $val = ($val-32)/180;
-                break;
-            case 'R':
-                $val/=80;
-                break;
-            case 'K':
-                $val=($val-273)/100;
-                break;
-            default:
-                break;
-        }
-        switch($to){
-            case 'C': 
-                $val*=100;
-                break;
-            case 'F':
-                $val = ($val*180)+32;
-                break;
-            case 'R':
-                $val*=80;
-                break;
-            case 'K':
-                $val=($val*100)+273;
-                break;
-            default:
-                break;
-        }
-        echo "<h3>Hasil Koversi: ".$val." &deg;".$to."</h3>";
+            if($_GET['val']!=""){
+                $val = $_GET['val'];
+                $from = $_GET['convertFrom'];
+                $to = $_GET['convertTo'];
+                switch($from){
+                    case 'C': 
+                        $val/=100;
+                        break;
+                    case 'F':
+                        $val = ($val-32)/180;
+                        break;
+                    case 'R':
+                        $val/=80;
+                        break;
+                    case 'K':
+                        $val=($val-273)/100;
+                        break;
+                    default:
+                        break;
+                }
+                switch($to){
+                    case 'C': 
+                        $val*=100;
+                        break;
+                    case 'F':
+                        $val = ($val*180)+32;
+                        break;
+                    case 'R':
+                        $val*=80;
+                        break;
+                    case 'K':
+                        $val=($val*100)+273;
+                        break;
+                    default:
+                        break;
+                }
+                echo "<h3>Hasil Koversi: ".$val." &deg;".$to."</h3>";
+            }
        }
     ?>
 </body>
