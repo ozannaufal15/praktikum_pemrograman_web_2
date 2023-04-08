@@ -15,12 +15,12 @@
     </form>
     <?php 
         if(isset($_POST['text']) && $_POST['text']!=""){
-            $text = $_POST['text'];
+            $text = strtolower($_POST['text']);
             $length = strlen($text);
             for ($i=0; $i < $length; $i++) { 
                 echo strtoupper($text[$i]);
                 for ($j=1; $j < $length; $j++) { 
-                    echo strtolower($text[$i]);
+                    echo $text[$i];
                 }
             }
         }
