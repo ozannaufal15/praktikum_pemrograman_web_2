@@ -26,9 +26,9 @@
     <?php 
         if(isset($_GET['val']) && $_GET['val']!=""){
             $val = $_GET['val'];
-            $i=(int)0;
+            $i=0;
             while ($i < $val) {
-                if($i & (int)1){
+                if($i % 2 == 1){
                     echo "<h4 class=\"hijau\">Peserta ke ".($i+1)."</h4>";
                 }else{
                     echo "<h4 class=\"merah\">Peserta ke ".($i+1)."</h4>";
