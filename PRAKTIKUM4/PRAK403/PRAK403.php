@@ -50,11 +50,6 @@
             echo "<th>Keterangan</th>";
             echo "</tr>";
 
-            function printMKandSKS(){
-
-            }
-
-
             for ($i=0; $i < sizeof($mahasiswa); $i++) { 
                 echo "<tr>";
                 echo "<td>".($i+1)."</td>";
