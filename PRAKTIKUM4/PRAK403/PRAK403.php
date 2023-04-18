@@ -77,7 +77,7 @@
                 if($SKSCount<7){
                     echo "<td class=\"red\">Revisi KRS</td>";
                 }else{
-                    echo "<td class=\"green\">Tidak Revisi";
+                    echo "<td class=\"green\">Tidak Revisi</td>";
                 }
                 echo "</tr>";
                 echo $mkRow;
