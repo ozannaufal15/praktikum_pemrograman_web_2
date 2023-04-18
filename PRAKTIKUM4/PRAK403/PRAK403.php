@@ -36,7 +36,7 @@
                     "mk7" => ["Rekayasa Perangkat Lunak", 3],
                     "mk8" => ["Analisis dan Perancangan Sistem", 3],
                     "mk9" => ["Komputasi Awan", 3],
-                    "mk10" => ["Kecerdasan Buatan", 3]];
+                    "mk10" => ["Kecerdasan Bisnis", 3]];
             $mahasiswa = [["Ridho", ["mk0", "mk1", "mk2", "mk3"]],
                         ["Ratna", ["mk4", "mk5", "mk6"]],
                         ["Tono", ["mk7", "mk8", "mk9", "mk10"]]];
