@@ -17,16 +17,16 @@
 <body>
 <form action="" method="post">
         <div>
-            <label for="name1">Nama 1</label>
-            <input type="number" id="name1" name="val1">
+            <label for="lenght">Panjang :</label>
+            <input type="number" id="lenght" name="val1">
         </div>
         <div>
-            <label for="name2">Nama 2</label>
-            <input type="number" id="name2" name="val2">
+            <label for="width">Lebar :</label>
+            <input type="number" id="width" name="val2">
         </div>
         <div>
-            <label for="name3">Nama 3</label>
-            <input type="text" id="name3" name="data">
+            <label for="data">Nilai :</label>
+            <input type="text" id="data" name="data">
         </div>
         <div>
             <button type="submit" name="submit">Urutkan</button>
@@ -54,16 +54,16 @@
         $row = $_POST['val2'];
         $data = explode(" ",$_POST['data']);
         if($row == $col && ($row > 0 || $col > 0)){
-        if(checkDataNumber($data)){
-            $data = array_chunk($data, $row);
-            for($i=0;$i<sizeof($data);$i++){    
-                echo "<tr>";
-                for($j=0;$j<sizeof($data[$i]);$j++){
-                    echo "<td>".$data[$i][$j]."</td>";
+            if(checkDataNumber($data)){
+                $data = array_chunk($data, $row);
+                for($i=0;$i<sizeof($data) && $i<$row;$i++){    
+                    echo "<tr>";
+                    for($j=0;$j<sizeof($data[$i]) && $j<$col;$j++){
+                        echo "<td>".$data[$i][$j]."</td>";
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
             }
-        }
         }else echo "Panjang nilai tidak sesuai dengan ukuran matriks";
     }
     }

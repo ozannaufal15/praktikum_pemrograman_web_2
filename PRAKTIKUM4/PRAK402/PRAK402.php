@@ -9,8 +9,11 @@
         table, tr, td{
             border: 1px solid black;
         }
-        td{
-            padding: 10px;
+        th{
+            background-color: lightgray;
+        }
+        td, th{
+            padding: 5px;
         }
     </style>
 </head>
@@ -21,6 +24,15 @@
         ['nama' => 'Budi', 'nim' => 2101002, 'uts' => 76, 'uas' => 79],
         ['nama' => 'Tono', 'nim' => 2101003, 'uts' => 50, 'uas' => 41],
         ['nama' => 'Jessica', 'nim' => 2101004, 'uts' => 60, 'uas' => 75]];
+
+        echo "<tr>";
+        echo "<th>Nama</th>";
+        echo "<th>NIM</th>";
+        echo "<th>Nilai UTS</th>";
+        echo "<th>Nilai UAS</th>";
+        echo "<th>Nilai Akhir</th>";
+        echo "<th>Huruf</th>";
+        echo "</tr>";
 
         for($i=0;$i<sizeof($data);$i++){
             $data[$i]['nilaiAkhir']=$data[$i]['uts']*0.4+$data[$i]['uas']*0.6;
@@ -48,22 +60,11 @@
                     $data[$i]['nilaiHuruf']='E';
                     break;
             }
-            
-        }
-        echo "<tr>";
-        echo "<td>Nama</td>";
-        echo "<td>NIM</td>";
-        echo "<td>Nilai UTS</td>";
-        echo "<td>Nilai UAS</td>";
-        echo "<td>Nilai Akhir</td>";
-        echo "<td>Huruf</td>";
-        echo "</tr>";
-
-        for($i=0;$i<sizeof($data);$i++){
             echo "<tr>";
             foreach($data[$i] as $a){
                 echo "<td>".$a."</td>";
             }
+            echo "</tr>";
         }
     ?>
     </table>
