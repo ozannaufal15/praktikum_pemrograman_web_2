@@ -17,8 +17,8 @@
 <body>
 <form action="" method="post">
         <div>
-            <label for="lenght">Panjang :</label>
-            <input type="number" id="lenght" name="val1">
+            <label for="length">Panjang :</label>
+            <input type="number" id="length" name="val1">
         </div>
         <div>
             <label for="width">Lebar :</label>
@@ -29,7 +29,7 @@
             <input type="text" id="data" name="data">
         </div>
         <div>
-            <button type="submit" name="submit">Urutkan</button>
+            <button type="submit" name="submit">Cetak</button>
         </div>
     </form>
     <hr>
