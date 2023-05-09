@@ -20,6 +20,9 @@ require_once("./Model.php");
 </head>
 <body>
     <?php 
+        if(isset($_GET["delete"])){
+            deleteMember($_GET["delete"]);
+        }
         $data = getAllMemberData();
     ?>
     <table>
@@ -41,12 +44,15 @@ require_once("./Model.php");
             <td><?=$row["tgl_mendaftar"]?></td>
             <td><?=$row["tgl_terakhir_bayar"]?></td>
             <td><a href="./FormMember.php?id=<?=$row["id_member"]?>">edit</a></td>
+            <td><a href="?delete=<?=$row["id_member"]?>" onclick="return confirm('Are You Sure?')">Hapus</a></td>
         </tr>
         <?php 
                 endforeach;
             endif;
         ?>
     </table>
-    <button>Tambah</button>
+    <form action="./FormMember.php">
+        <button type="submit" name="id" value="create">Tambah</button>
+    </form>
 </body>
 </html>

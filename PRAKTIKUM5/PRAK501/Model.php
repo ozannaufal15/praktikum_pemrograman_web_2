@@ -49,4 +49,14 @@ function updateMember($arr, $id){
         echo $e->getMessage();
     }
 }
+
+function deleteMember($id){
+    try{
+        $query = "DELETE FROM member WHERE id_member=$id";
+        $stmt = $GLOBALS["koneksi"]->prepare($query);
+        $stmt->execute();
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+}
 ?>

@@ -39,9 +39,6 @@ if($id == "create"){
             <label>Tanggal Daftar</label>
             <input type="datetime-local" name="tgl-mendaftar" value="<?=($create)?date("Y-m-d h:m:s"):$data["tgl_mendaftar"]?>">
         </div>
-        <?php 
-        var_dump($data["tgl_mendaftar"]);
-        ?>
         <div>
             <label>Tanggal Terakhir Bayar</label>
             <input type="date" name="tgl-terakhir-bayar" value="<?=($create)?date("Y-m-d"):$data["tgl_terakhir_bayar"]?>">
