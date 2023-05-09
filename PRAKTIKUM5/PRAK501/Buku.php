@@ -21,17 +21,16 @@ require_once("./Model.php");
 <body>
     <?php 
         if(isset($_GET["delete"])){
-            deleteMember($_GET["delete"]);
+            deleteBuku($_GET["delete"]);
         }
-        $data = getAllMemberData();
+        $data = getAllBukuData();
     ?>
     <table>
         <tr>
-            <td>Nama</td>
-            <td>Nomor Member</td>
-            <td>Alamat</td>
-            <td>Tanggal Daftar</td>
-            <td>Tanggal Terakhir Bayar</td>
+            <td>Judul Buku</td>
+            <td>Penulis</td>
+            <td>Penerbit</td>
+            <td>Tahun Terbit</td>
             <td colspan="2"></td>
         </tr>
         <?php 
@@ -39,20 +38,19 @@ require_once("./Model.php");
                 foreach($data as $row):
         ?>
         <tr>
-            <td><?=$row["nama_member"]?></td>
-            <td><?=$row["nomor_member"]?></td>
-            <td><?=$row["alamat"]?></td>
-            <td><?=$row["tgl_mendaftar"]?></td>
-            <td><?=$row["tgl_terakhir_bayar"]?></td>
-            <td><a href="./FormMember.php?id=<?=$row["id_member"]?>">edit</a></td>
-            <td><a href="?delete=<?=$row["id_member"]?>" onclick="return confirm('Are You Sure?')">Hapus</a></td>
+            <td><?=$row["judul_buku"]?></td>
+            <td><?=$row["penulis"]?></td>
+            <td><?=$row["penerbit"]?></td>
+            <td><?=$row["tahun_terbit"]?></td>
+            <td><a href="./FormBuku.php?id=<?=$row["id_buku"]?>">edit</a></td>
+            <td><a href="?delete=<?=$row["id_buku"]?>" onclick="return confirm('Are You Sure?')">Hapus</a></td>
         </tr>
         <?php 
                 endforeach;
             endif;
         ?>
     </table>
-    <form action="./FormMember.php">
+    <form action="./FormBuku.php">
         <button type="submit" name="id" value="create">Tambah</button>
     </form>
 </body>
