@@ -11,10 +11,10 @@ require_once("./Model.php");
     <style>
         table, tr, td{
             border: 1px solid black;
-            padding: 5px;
         }
         td{
             max-width: 300px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -25,6 +25,7 @@ require_once("./Model.php");
         }
         $data = getAllBukuData();
     ?>
+    <h1>Data Buku</h1>
     <table>
         <tr>
             <td>Judul Buku</td>
@@ -42,7 +43,7 @@ require_once("./Model.php");
             <td><?=$row["penulis"]?></td>
             <td><?=$row["penerbit"]?></td>
             <td><?=$row["tahun_terbit"]?></td>
-            <td><a href="./FormBuku.php?id=<?=$row["id_buku"]?>">edit</a></td>
+            <td><a href="./FormBuku.php?id=<?=$row["id_buku"]?>">Edit</a></td>
             <td><a href="?delete=<?=$row["id_buku"]?>" onclick="return confirm('Are You Sure?')">Hapus</a></td>
         </tr>
         <?php 

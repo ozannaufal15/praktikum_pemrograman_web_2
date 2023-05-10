@@ -11,10 +11,10 @@ require_once("./Model.php");
     <style>
         table, tr, td{
             border: 1px solid black;
-            padding: 5px;
         }
         td{
             max-width: 300px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -25,6 +25,7 @@ require_once("./Model.php");
         }
         $data = getAllMemberData();
     ?>
+    <h1>Data Member</h1>
     <table>
         <tr>
             <td>Nama</td>
@@ -44,7 +45,7 @@ require_once("./Model.php");
             <td><?=$row["alamat"]?></td>
             <td><?=$row["tgl_mendaftar"]?></td>
             <td><?=$row["tgl_terakhir_bayar"]?></td>
-            <td><a href="./FormMember.php?id=<?=$row["id_member"]?>">edit</a></td>
+            <td><a href="./FormMember.php?id=<?=$row["id_member"]?>">Edit</a></td>
             <td><a href="?delete=<?=$row["id_member"]?>" onclick="return confirm('Are You Sure?')">Hapus</a></td>
         </tr>
         <?php 
