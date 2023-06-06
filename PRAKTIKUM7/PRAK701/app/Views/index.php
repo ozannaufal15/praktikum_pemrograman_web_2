@@ -1,7 +1,3 @@
-<?php 
-    //dd($data);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +12,7 @@
     <div class="container">
         <div class="pt-5 d-flex justify-content-between">
             <div class="col">
-                <h1>Selamat Datang di Website Mahasiswa</h1>
+                <h1>Selamat Datang di Website Perpustakaan</h1>
                 <p>Ini adalah halaman home</p>
             </div>
             <div class="">
@@ -27,7 +23,7 @@
         <!-- create list of books -->
         <div class="row">
             <div class="col-12">
-                <h2>Daftar Mahasiswa</h2>
+                <h2>Daftar Buku</h2>
                 <a class="btn btn-success" href="<?= base_url("/tambah") ?>">Tambah Data</a>
             </div>
 
@@ -35,9 +31,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Nama</th>
-                            <th>NIM</th>
-                            <th>Alamat</th>
+                            <th>Judul</th>
+                            <th>Penulis</th>
+                            <th>Penerbit</th>
+                            <th>Tahun Terbit</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -46,12 +43,16 @@
                             foreach($data as $row):
                         ?>
                             <tr>
-                                <td><?= $row["nama"] ?></td>
-                                <td><?= $row["nim"] ?></td>
-                                <td><?= $row["alamat"] ?></td>
+                                <td><?= $row["judul"] ?></td>
+                                <td><?= $row["penulis"] ?></td>
+                                <td><?= $row["penerbit"] ?></td>
+                                <td><?= $row["tahun_terbit"] ?></td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="<?=base_url("/edit"."/".$row["id"])?>" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="<?=base_url("/hapus"."/".$row["id"])?>" method="post" style="display: inline-block;" onsubmit="return confirm('Yakin mau Hapus?')">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php 
@@ -60,8 +61,8 @@
                     </tbody>
                 </table>
             </div>
-                
+        </div>        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
-</html>
+</html> 

@@ -19,20 +19,26 @@
             <div class="col-12">
                 <h2>Tambah Data Buku</h2>
             </div>
-
+            <div class="alert alert-danger">
+                <?= validation_list_errors()?>
+            </div>
             <div class="col-3">
                 <form action="" method="post">
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama">
+                        <label for="judul" class="form-label">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul">
                     </div>
                     <div class="mb-3">
-                        <label for="penulis" class="form-label">NIM</label>
-                        <input type="text" class="form-control" id="nim" name="nim">
+                        <label for="penulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control" id="penulis" name="penulis">
                     </div>
                     <div class="mb-3">
-                        <label for="penerbit" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" id="alamat" name="alamat">
+                        <label for="penerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control" id="penerbit" name="penerbit">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
+                        <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit">
                     </div>
                     <button type="submit" class="btn btn-primary">tambah</button>
                 </form>

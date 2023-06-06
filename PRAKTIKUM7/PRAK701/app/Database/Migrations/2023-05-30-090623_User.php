@@ -4,11 +4,10 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Crud extends Migration
+class User extends Migration
 {
     public function up()
     {
-        //
         $field = 
         [
             "id" => [
@@ -17,26 +16,25 @@ class Crud extends Migration
                 "unsigned"       => true,
                 "auto_increment" => true
             ],
-            "nama" => [
+            "username" => [
                 "type"           => "VARCHAR",
                 "constraint"     => 100
             ],
-            "nim" => [
+            "email" => [
                 "type"           => "VARCHAR",
-                "constraint"     => 13
+                "constraint"     => 100
             ],
-            "alamat" => [
-                "type"           => "TEXT"  
+            "password" => [
+                "type"           => "TEXT"
             ]
         ];
         $this->forge->addField($field);
         $this->forge->addKey("id", true);
-        $this->forge->createTable("crud", true);
+        $this->forge->createTable("user", true);
     }
 
     public function down()
     {
-        //
-        $this->forge->dropTable("crud", true);
+        $this->forge->dropTable("user", true);
     }
 }

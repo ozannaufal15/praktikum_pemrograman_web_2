@@ -13,39 +13,31 @@
 
 <body>
     <div class="container">
-
-
         <div class="row">
             <div class="col-12">
                 <h2>Edit Data Buku</h2>
             </div>
-        <?= var_dump($buku) ?>
             <div class="col-3">
-                <form action="<?= base_url('/buku/'. $buku['id'] . '/edit') ?>" method="post">
+            <form action="<?=base_url("/editdata"."/".$data["id"])?>" method="post">
                     <div class="mb-3">
                         <label for="judul" class="form-label">Judul</label>
-                        <input type="text" class="form-control" id="judul" name="judul" value="<?= $buku['judul'] ?>">
+                        <input type="text" class="form-control" id="judul" name="judul" value="<?=$data["judul"]?>">
                     </div>
                     <div class="mb-3">
-                        <label for="penulis" class="form-label">penulis</label>
-                        <input type="text" class="form-control" id="penulis" name="penulis" value="<?= $buku['penulis'] ?>">
+                        <label for="penulis" class="form-label">Penulis</label>
+                        <input type="text" class="form-control" id="penulis" name="penulis" value="<?=$data["penulis"]?>">
                     </div>
                     <div class="mb-3">
-                        <label for="penerbit" class="form-label">penerbit</label>
-                        <input type="text" class="form-control" id="penerbit" name="penerbit" value="<?= $buku['penerbit'] ?>">
+                        <label for="penerbit" class="form-label">Penerbit</label>
+                        <input type="text" class="form-control" id="penerbit" name="penerbit" value="<?=$data["penerbit"]?>">
                     </div>
                     <div class="mb-3">
-                        <label for="tahun_terbit" class="form-label">tahun terbit</label>
-                        <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" value="<?= $buku['tahun_terbit'] ?>">
+                        <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
+                        <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" value="<?=$data["tahun_terbit"]?>">
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div> -->
                     <button type="submit" class="btn btn-primary">edit</button>
                 </form>
             </div>
-
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
