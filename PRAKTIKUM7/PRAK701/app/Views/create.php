@@ -19,9 +19,11 @@
             <div class="col-12">
                 <h2>Tambah Data Buku</h2>
             </div>
+            <?php if(session()->getFlashdata()):?>
             <div class="alert alert-danger">
                 <?= validation_list_errors()?>
             </div>
+            <?php endif;?>
             <div class="col-3">
                 <form action="" method="post">
                     <div class="mb-3">

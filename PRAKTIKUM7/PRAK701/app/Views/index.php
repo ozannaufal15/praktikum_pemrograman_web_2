@@ -16,7 +16,7 @@
                 <p>Ini adalah halaman home</p>
             </div>
             <div class="">
-                <a href="" class="btn btn-danger">Logout</a>
+                <a href="<?= base_url("/logout") ?>" class="btn btn-danger">Logout</a>
             </div>
         </div>
 

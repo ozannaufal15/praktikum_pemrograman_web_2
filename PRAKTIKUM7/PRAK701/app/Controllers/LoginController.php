@@ -33,14 +33,20 @@ class LoginController extends BaseController
         $model = new UserModel();
         $user = $model->where("email", $data["email"])->first();
 
-        if($user && password_verify($data["password"], $user["password"])){
+        if($user && password_verify((string)$data["password"], $user["password"])){
             session()->set([
                 "username" => $user["username"],
                 "Logged_in" => true
             ]);
             return redirect()->to(base_url("/"));
         }else{
-            return redirect()->to(base_url("/login"))->with("pesan", "email atau password salah");
+            return redirect()->to(base_url("/login"))->with("error", "Email atau Password salah");
         }
+    }
+
+    function logout() 
+    {
+        session()->destroy();
+        return redirect()->to(base_url("/login"));
     }
 }

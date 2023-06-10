@@ -12,9 +12,16 @@
     <div class="container w-50 ">
        
         <main class="form-signin w-100 m-auto text-center">
-            <div class="alert alert-danger">
-                <?= validation_list_errors()?>
+          <?php if(session()->getFlashdata()):?>
+            <div class="alert alert-danger ">
+                <?php 
+                  echo session()->getFlashdata("error");
+                  foreach (validation_errors() as $item) {
+                    echo $item."<br>";
+                  };
+                ?>
             </div>
+            <?php endif;?>
             <form action="<?=base_url("/login")?>" method="post">
               <h1 class="h3 mb-3 fw-normal">CRUD Login</h1>
           

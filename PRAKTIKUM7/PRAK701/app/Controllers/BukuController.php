@@ -29,7 +29,7 @@ class BukuController extends BaseController
             "judul" => "required",
             "penulis" => "required",
             "penerbit" => "required",
-            "tahun_terbit" => "required|integer|less_than_equal_to[2155]|greater_than_equal_to[1901]"
+            "tahun_terbit" => "required|integer|less_than_equal_to[2024]|greater_than_equal_to[1901]"
         ];
         //true jika semua rules terpenuhi
         if(!$this->validate($rules)){
@@ -73,7 +73,7 @@ class BukuController extends BaseController
             "judul" => "required",
             "penulis" => "required",
             "penerbit" => "required",
-            "tahun_terbit" => "required"
+            "tahun_terbit" => "required|integer|less_than_equal_to[2024]|greater_than_equal_to[1901]"
         ];
         //true jika semua rules terpenuhi
         if(!$this->validate($rules)){

@@ -29,12 +29,15 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'BukuController::index', ["filter" => "login"]);
-$routes->get("/tambah", "BukuController::tambah");
-$routes->post("/tambah", "BukuController::simpan");
-$routes->delete("/hapus/(:num)", "BukuController::hapus/$1");
-$routes->get("/edit/(:num)","BukuController::edit/$1");
-$routes->post("/editdata/(:num)","BukuController::update/$1");
+$routes->group("", ["filter" => "login"], static function($routes){
+    $routes->get('/', 'BukuController::index');
+    $routes->get("/tambah", "BukuController::tambah");
+    $routes->post("/tambah", "BukuController::simpan");
+    $routes->delete("/hapus/(:num)", "BukuController::hapus/$1");
+    $routes->get("/edit/(:num)","BukuController::edit/$1");
+    $routes->post("/editdata/(:num)","BukuController::update/$1");
+    $routes->get("/logout", "LoginController::logout");
+});
 $routes->get("/login", "LoginController::index");
 $routes->post("/login", "LoginController::login");
 
